@@ -24,6 +24,9 @@ inst app-emulation/qemu
 # damn you burpsuite
 inst virtual/jdk
 inst net-analyzer/nmap
+inst dev-util/strace
+inst app-emulation/emul-linux-x86-xlibs
+inst app-emulation/emul-linux-x86-baselibs
 
 # mitmproxy
 #sudo pip install urwid
