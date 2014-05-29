@@ -1,0 +1,50 @@
+#!/bin/bash
+
+inst()
+{
+    echo "[+] installing $1"
+    sudo emerge $1
+
+cd ~
+echo "[+] creating .bachrc"
+echo "expoort EPYTHON=python2.7"
+echo "[+] updating repo"
+sudo emerge --sync
+sudo emerge --update --deep @world
+inst vim
+inst git
+inst mercurial
+inst dev-python/pip
+inst ipython
+inst net-irc/irssi
+inst firefox
+inst seamonkey
+inst dev-python/mock
+inst app-emulation/qemu
+inst net-analyzer/nmap
+
+# mitmproxy
+#sudo pip install urwid
+#sudo pip install flask
+#sudo pip install requests
+#sudo pip install netlib
+#cd ~
+#git clone https://github.com/mitmproxy/mitmproxy
+#cd mitmproxy
+#sudo python2.7 setup.py install
+
+# binwalk
+
+# bowcaster
+
+# john th ripper
+
+# hashcat
+
+# hashcat utlis
+
+# hashcat maskprocessor
+
+
+
+

@@ -1,0 +1,66 @@
+#!/bin/bash
+
+cd ~
+mkdir ~/tools
+mkdir ~/work
+rm -r ~/examples.desktop
+rm -r ~/Music
+rm -r ~/Pictures
+rm -r ~/Templates
+rm -r ~/Videos
+rm -r ~/Public
+#bashrc
+echo -e "\n[+] creating .bashrc"
+echo "export EDITOR=vim"
+#irssi
+echo -e "\n[+] creating .irssi"
+cp -r irssi ~/.irssi
+#vimrc
+echo -e "\n[+] creating .vimrc"
+rm ~/.vimrc
+echo "highlight Pmenu guibg=DimGrey gui=bold" >> ~/.vimrc
+echo "syntax on" >> ~/.vimrc
+echo "set nohlsearch" >> ~/.vimrc
+echo "set ai" >> ~/.vimrc
+echo "set bg=dark" >> ~/.vimrc
+echo "set showmatch" >> ~/.vimrc
+echo "highlight SpecialKey ctermfg=DarkGray" >> ~/.vimrc
+echo "set listchars=tab:>-,trail:~" >> ~/.vimrc
+echo "set list" >> ~/.vimrc
+echo "autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class" >> ~/.vimrc
+echo "set nocompatible" >> ~/.vimrc
+echo "set tabstop=4" >> ~/.vimrc
+echo "set vb t_vb=" >> ~/.vimrc
+echo "set ruler" >> ~/.vimrc
+echo "set shiftwidth=4" >> ~/.vimrc
+echo "set expandtab" >> ~/.vimrc
+echo "set autoindent" >> ~/.vimrc
+echo "set smartindent" >> ~/.vimrc
+echo "set smarttab" >> ~/.vimrc
+echo "syntax on" >> ~/.vimrc
+echo "set listchars=tab:>-" >> ~/.vimrc
+echo "set listchars+=trail:." >> ~/.vimrc
+echo "set ignorecase" >> ~/.vimrc
+echo "set smartcase" >> ~/.vimrc
+echo "map <C-t><up> :tabr<cr>" >> ~/.vimrc
+echo "map <C-t><down> :tabl<cr>" >> ~/.vimrc
+echo "map <C-t><left> :tabp<cr>" >> ~/.vimrc
+echo "map <C-t><right> :tabn<cr>" >> ~/.vimrc
+echo "set wrap" >> ~/.vimrc
+echo "set linebreak" >> ~/.vimrc
+echo "set textwidth=79" >> ~/.vimrc
+echo "set number" >> ~/.vimrc
+echo "set cpoptions+=$" >> ~/.vimrc
+echo "colorscheme desert" >> ~/.vimrc
+echo "filetype plugin on" >> ~/.vimrc
+echo "autocmd BufWritePre * :%s/\s\+$//e" >> ~/.vimrc
+echo "map <silent> <PageUp> 1000<C-U>" >> ~/.vimrc
+echo "map <silent> <PageDown> 1000<C-D>" >> ~/.vimrc
+echo "imap <silent> <PageUp> <C-O>1000<C-U>" >> ~/.vimrc
+echo "imap <silent> <PageDown> <C-O>1000<C-D>" >> ~/.vimrc
+echo "set undodir=~/.vim/undodir" >> ~/.vimrc
+echo "set undofile" >> ~/.vimrc
+echo "set undolevels=1000" >> ~/.vimrc
+echo "set undoreload=10000"  >> ~/.vimrc
+
+

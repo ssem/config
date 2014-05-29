@@ -1,54 +1,16 @@
 #!/bin/bash
-
-if [ -z $1 ]
-    then
-        echo -e "\n\tnew_system.sh   < desktop, work, other >\n"
-        exit
-fi
-
 inst()
 {
     echo "[+] installing $1"
     sudo apt-get -qq -y install $1
 }
 
-update()
-{
-    echo "[+] updating repo"
-    sudo apt-get -qq -y update
-}
-
-if [ $1 = "desktop" ]
-    then
-    cd ~
-elif [ $1 = "work" ]
-    then
-    inst make
-    inst gcc
-    inst libc-dev
-    # install linux-headers
-    mount /dev/sr0 /mnt
-    cp VMwareTools-*.tar.gz /usr/local/src
-    cd /usr/local/src
-    tar zxvf VMwareTools-*.tar.gz
-    cd vmware-tools-distrib
-    ./vmware-install.pl
-    sudo easy_install nose
-    inst python-mock
-elif [ $1 = "other" ]
-    then
-    cd ~
-fi
-
 cd ~
-update
-mkdir tools
-~/examples.desktop
-rm -r ~/Music
-rm -r ~/Pictures
-rm -r ~/Templates
-rm -r ~/Videos
-rm -r ~/Public
+echo "[+] updating repo"
+sudo apt-get -qq -y update
+inst make
+inst python-mock
+inst libc-dev
 inst python-bs4
 inst openssh-server
 inst vim
@@ -75,65 +37,11 @@ inst unrar
 inst libssl-dev
 inst p7zip-full
 inst htop
-echo "[+] installing mitmproxy"
+inst firefox
 sudo pip -q install mitmproxy
 
-#vimrc
-echo -e "\n[+] creating .vimrc"
-echo "au FileType python set ofu=jedi#complete" >> ~/.vimrc
-echo "highlight Pmenu guibg=DimGrey gui=bold" >> ~/.vimrc
-echo "syntax on" >> ~/.vimrc
-echo "set nohlsearch" >> ~/.vimrc
-echo "set ai" >> ~/.vimrc
-echo "set bg=dark" >> ~/.vimrc
-echo "set showmatch" >> ~/.vimrc
-echo "highlight SpecialKey ctermfg=DarkGray" >> ~/.vimrc
-echo "set listchars=tab:>-,trail:~" >> ~/.vimrc
-echo "set list" >> ~/.vimrc
-echo "autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class" >> ~/.vimrc
-echo "set nocompatible" >> ~/.vimrc
-echo "set tabstop=4" >> ~/.vimrc
-echo "set vb t_vb=" >> ~/.vimrc
-echo "set ruler" >> ~/.vimrc
-echo "set shiftwidth=4" >> ~/.vimrc
-echo "set expandtab" >> ~/.vimrc
-echo "set autoindent" >> ~/.vimrc
-echo "set smartindent" >> ~/.vimrc
-echo "set smarttab" >> ~/.vimrc
-echo "syntax on" >> ~/.vimrc
-echo "set listchars=tab:>-" >> ~/.vimrc
-echo "set listchars+=trail:." >> ~/.vimrc
-echo "set ignorecase" >> ~/.vimrc
-echo "set smartcase" >> ~/.vimrc
-echo "map <C-t><up> :tabr<cr>" >> ~/.vimrc
-echo "map <C-t><down> :tabl<cr>" >> ~/.vimrc
-echo "map <C-t><left> :tabp<cr>" >> ~/.vimrc
-echo "map <C-t><right> :tabn<cr>" >> ~/.vimrc
-echo "set wrap" >> ~/.vimrc
-echo "set linebreak" >> ~/.vimrc
-echo "set textwidth=79" >> ~/.vimrc
-echo "set number" >> ~/.vimrc
-echo "set cpoptions+=$" >> ~/.vimrc
-echo "colorscheme desert" >> ~/.vimrc
-echo "filetype plugin on" >> ~/.vimrc
-echo "autocmd BufWritePre * :%s/\s\+$//e" >> ~/.vimrc
-echo "map <silent> <PageUp> 1000<C-U>" >> ~/.vimrc
-echo "map <silent> <PageDown> 1000<C-D>" >> ~/.vimrc
-echo "imap <silent> <PageUp> <C-O>1000<C-U>" >> ~/.vimrc
-echo "imap <silent> <PageDown> <C-O>1000<C-D>" >> ~/.vimrc
-echo "set undodir=~/.vim/undodir" >> ~/.vimrc
-echo "set undofile" >> ~/.vimrc
-echo "set undolevels=1000" >> ~/.vimrc
-echo "set undoreload=10000"  >> ~/.vimrc
-
-# bash_aliases
-echo "[+] creating .bash_aliases"
-echo "alias john='~/tools/john/run/john'" >> ~/.bash_aliases
-echo "alias l='ls'" >> ~/.bash_aliases
-echo "alias sl='ls'" >> ~/.bash_aliases
-
 # binwalk
-echo -e "\n[+] installing binwalk"
+echo "[+] installing binwalk"
 git clone https://github.com/devttys0/binwalk
 cd binwalk/src
 sudo ./easy_install.sh > tmp
@@ -141,22 +49,15 @@ cd ~
 sudo rm -r binwalk
 
 # bowcaster
-echo -e "\n[+] installing bowcaster"
+echo "[+] installing bowcaster"
 git clone https://github.com/zcutlip/bowcaster
 cd bowcaster
 sudo python setup.py install > tmp
 cd ~
 sudo rm -r bowcaster
 
-# chrome
-echo -e "\n[+] installing chrome"
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome*.deb > tmp
-rm tmp
-rm google-chrome*.deb
-
 # john the ripper
-echo -e "\n[+] installing john the ripper"
+echo "[+] installing john the ripper"
 wget http://www.openwall.com/john/g/john-1.7.9-jumbo-7.tar.gz
 tar -zxvf john-1*
 rm john*.gz
@@ -167,22 +68,24 @@ mv john*/run ~/tools/john
 rm -r john*
 
 # hashcat
-echo -e "\n[+] installing hashcat"
+echo "[+] installing hashcat"
 wget http://hashcat.net/files/oclHashcat-1.01.7z
 7z x oclHashcat*
 rm ocl*.7z
 mv oclHashcat* ~/tools/hashcat
 
 # hashcat utils
-echo -e "\n[+] installing hashcat utils"
+echo "[+] installing hashcat utils"
 wget http://hashcat.net/files/hashcat-utils-0.9-64.7z
 7z x hashcat*
 rm hashcat*.7z
 mv hashcat* ~/tools/utils
 
 # hashcat maskprocessor
-echo -e "\n[+] installing maskprocessor"
+echo "[+] installing maskprocessor"
 wget http://hashcat.net/files/maskprocessor-0.69.7z
 7z x maskp*
 rm maskp*.7z
 mv maskp* ~/tools/maskprocessor
+
+rm tmp
