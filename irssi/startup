@@ -1,0 +1,4 @@
+/ignore -channels #cyberpunk * JOINS PARTS QUITS NICKS
+/ignore -channels ##reversing * JOINS PARTS QUITS NICKS
+/ignore -channels #r_netsec * JOINS PARTS QUITS NICKS
+/ignore -channels #android * JOINS PARTS QUITS NICKS
