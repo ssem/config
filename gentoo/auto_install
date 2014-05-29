@@ -21,6 +21,8 @@ inst firefox
 inst seamonkey
 inst dev-python/mock
 inst app-emulation/qemu
+# damn you burpsuite
+inst virtual/jdk
 inst net-analyzer/nmap
 
 # mitmproxy
