@@ -1,0 +1,25 @@
+sudo emerge unrar
+sudo emerge mtd-utils
+sudo emerge app-arch/ncrompress
+sudo emerge app-arch/arj
+sudo emerge app-arch/lha
+sudo emerge app-arch/p7zip
+sudo emerge dev-python/python-magic
+sudo emerge dev-python/matplotlib
+
+//// in firmware modkit add the following to each of the lines ////
+
+#if PRE_ANSI_C89
+#  define OF(args) ()
+#else
+#  define OF(args) args
+#endif
+vim lzma/C/7zip/Compress/LZMA_Lib/ZLib.cpp
+vim squashfs-3.0-lzma-damn-small-variant/lzma/C/7zip/Compress/LZMA_Lib/ZLib.cpp
+vim others/squashfs-2.2-r2-7z/liblzma/ZLib.cpp
+vim others/squashfs-3.0-e2100/lzma/C/7zip/Compress/LZMA_Lib/ZLib.cpp
+
+//// install the python section from the following ////
+
+ftp://ftp.astron.com/pub/file/
+
