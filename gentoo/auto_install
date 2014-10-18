@@ -13,14 +13,64 @@ sudo emerge --sync
 sudo emerge --update --deep @world
 inst vim
 inst git
+inst bzip2
+inst gzip
+inst p7zip
+inst unrar
+inst unzip
+inst mysql
+inst sqlite
 inst mercurial
-inst dev-python/pip
 inst ipython
 inst net-irc/irssi
 inst firefox
 inst seamonkey
+inst links
+inst lynx
 inst dev-python/mock
 inst app-emulation/qemu
+inst dev-python/pip
+inst dev-python/mock
+inst dev-python/numpy
+inst dev-python/pandas
+inst dev-python/setuptools
+inst dev-util/bless
+inst dev-util/cmake
+inst dev-util/scons
+inst dev-utls/strace
+inst net-analyzer/netcat
+inst net-analyzer/nmap
+inst net-analyzer/tcpdump
+inst net-analyzer/traceroute
+inst net-analyzer/wireshark
+inst net-dialup/minicom
+inst net-firewall/iptables
+inst net-ftp/ftp
+inst net-irc/irssi
+inst net-misx/curl
+inst net-misc/telnet
+inst net-misc/rsync
+inst net-misc/whois
+inst net-misc/wget
+inst net-misc/openssh
+inst net-misc/dhcpcd
+inst net-wireless/aircrack-ng
+inst net-wireless/hostapd
+inst net-wireless/wpa_supplicant
+inst sys-devel/autoconf
+inst sys-devel/automake
+inst sys-devel/binutils
+inst sys-devel/bison
+inst sys-devel/crossdev
+inst sys-devel/flex
+inst sys-devel/gcc
+inst sys-devel/make
+inst sys-devel/patch
+inst sys-fs/cramfs
+inst sys-kernel/linux-headers
+inst sys-process/htop
+inst sys-process/iotop
+
 # damn you burpsuite
 inst virtual/jdk
 inst net-analyzer/nmap
@@ -29,14 +79,10 @@ inst app-emulation/emul-linux-x86-xlibs
 inst app-emulation/emul-linux-x86-baselibs
 
 # mitmproxy
-#sudo pip install urwid
-#sudo pip install flask
-#sudo pip install requests
-#sudo pip install netlib
-#cd ~
-#git clone https://github.com/mitmproxy/mitmproxy
-#cd mitmproxy
-#sudo python2.7 setup.py install
+sudo pip install urwid
+sudo pip install flask
+sudo pip install requests
+sudo pip install netlib
 
 # binwalk
 
@@ -49,7 +95,3 @@ inst app-emulation/emul-linux-x86-baselibs
 # hashcat utlis
 
 # hashcat maskprocessor
-
-
-
-
