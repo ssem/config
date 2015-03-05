@@ -27,6 +27,10 @@ inst firefox
 inst seamonkey
 inst links
 inst lynx
+inst app-admin/tripwire
+inst app-antivirus/clamav
+inst app-forensics/rkhunter
+inst app-forensics/chkrootkit
 inst x11-terms/terminator
 inst dev-python/mock
 inst app-emulation/qemu
