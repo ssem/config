@@ -27,6 +27,7 @@ inst firefox
 inst seamonkey
 inst links
 inst lynx
+inst x11-terms/terminator
 inst dev-python/mock
 inst app-emulation/qemu
 inst dev-python/pip
