@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~
+#remove garbage
 mkdir ~/tools
 mkdir ~/work
 rm -r ~/examples.desktop
@@ -11,7 +11,6 @@ rm -r ~/Videos
 rm -r ~/Public
 #bashrc
 echo -e "\n[+] creating .bashrc"
-echo "export EDITOR=vim"
 #irssi
 echo -e "\n[+] creating .irssi"
 cp -r irssi ~/.irssi
@@ -46,9 +45,6 @@ echo "map <C-t><up> :tabr<cr>" >> ~/.vimrc
 echo "map <C-t><down> :tabl<cr>" >> ~/.vimrc
 echo "map <C-t><left> :tabp<cr>" >> ~/.vimrc
 echo "map <C-t><right> :tabn<cr>" >> ~/.vimrc
-echo "set wrap" >> ~/.vimrc
-echo "set linebreak" >> ~/.vimrc
-echo "set textwidth=79" >> ~/.vimrc
 echo "set number" >> ~/.vimrc
 echo "set cpoptions+=$" >> ~/.vimrc
 echo "colorscheme desert" >> ~/.vimrc
@@ -62,5 +58,3 @@ echo "set undodir=~/.vim/undodir" >> ~/.vimrc
 echo "set undofile" >> ~/.vimrc
 echo "set undolevels=1000" >> ~/.vimrc
 echo "set undoreload=10000"  >> ~/.vimrc
-
-
