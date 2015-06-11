@@ -1,0 +1,11 @@
+mkdir ~/work
+cd ~/work
+git clone https://github.com/ssem/config
+git clone https://github.com/ssem/malware
+git clone https://github.com/ssem/wifi
+git clone https://github.com/ssem/scanning
+git clone https://github.com/ssem/passwords
+git clone https://github.com/ssem/honeypots
+git clone https://github.com/ssem/fuzzing
+git clone https://github.com/ssem/antivirus
+git clone https://github.com/ssem/mygame
