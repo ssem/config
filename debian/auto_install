@@ -9,34 +9,20 @@ cd ~
 echo "[+] updating repo"
 sudo apt-get -qq -y update
 inst make
-inst python-mock
-inst libc-dev
 inst python-bs4
 inst openssh-server
 inst vim
 sudo update-alternatives --config editor
-inst gnome-session-fallback
 inst git
-inst mercurial
-inst libxss1
-inst python-pip
-inst python-lxml
-inst python-openssl
-inst python-pyasn1
-inst python-urwid
 inst tmux
 inst build-essential
-inst irssi
 inst ipython
 inst python-beautifulsoup
-inst python-mysqldb
 inst qemu
 inst sqlite3
 inst nmap
 inst unrar
-inst libssl-dev
 inst p7zip-full
 inst htop
-inst firefox
 sudo pip -q install mitmproxy
 inst terminator
