@@ -55,3 +55,7 @@ inst ipython
 inst python-beautifulsoup
 inst default-jdk
 inst gradle
+inst libssl-dev
+inst lsb-core
+inst ocl-icd-opencl-dev
+inst intel-opencl

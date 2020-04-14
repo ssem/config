@@ -1,0 +1,73 @@
+#!/bin/bash
+
+jtr()
+{
+    cd ~/tools/src
+    wget https://www.openwall.com/john/k/john-1.9.0-jumbo-1.tar.xz
+    tar -xf john-1.9.0-jumbo-1.tar.xz
+    rm john-1.9.0-jumbo-1.tar.xz
+    cd john-1.9.0-jumbo-1/src
+    ./configure
+    make
+    cd ~/tools
+    ln -s ~/tools/src/john-1.9.0-jumbo-1/run/john john
+}
+
+ghidra()
+{
+    cd ~/tools/src
+    wget https://ghidra-sre.org/ghidra_9.1.2_PUBLIC_20200212.zip
+    unzip ghidra_9.1.2_PUBLIC_20200212.zip
+    rm ghidra_9.1.2_PUBLIC_20200212.zip
+    cd ~/tools/
+    ln -s ~/tools/src/ghidra_9.1.2_PUBLIC/ghidraRun ghidra
+}
+
+hashcat()
+{
+    cd ~/tools/src
+    mkdir neo
+    cd neo
+    wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-gmmlib_20.1.1_amd64.deb
+wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-igc-core_1.0.3698_amd64.deb
+wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-igc-opencl_1.0.3698_amd64.deb
+wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-opencl_20.14.16441_amd64.deb
+wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-ocloc_20.14.16441_amd64.deb
+wget https://github.com/intel/compute-runtime/releases/download/20.14.16441/intel-level-zero-gpu_0.8.16441_amd64.deb
+    sudo dpkg -i *.deb
+    cd ~/tools/src
+    rm -r neo
+
+    cd ~/tools/src
+    wget https://hashcat.net/files/hashcat-5.1.0.tar.gz
+    tar -xf hashcat-5.1.0.tar.gz
+    rm hashcat-5.1.0.tar.gz
+    cd hashcat-5.1.0
+    make
+    cd ~/tools
+    ln -s ~/tools/src/hashcat-5.1.0/hashcat hashcat
+}
+# tools
+mkdir -p ~/tools/src
+echo "[+] installing JTR"
+#jtr
+
+echo "[+] install ghidra"
+#ghidra
+
+echo "[+] install hashcat"
+hashcat
+
+# work
+mkdir -p ~/work
+cd ~/work
+
+#git clone https://github.com/ssem/config
+#git clone https://github.com/ssem/malware
+#git clone https://github.com/ssem/wifi
+#git clone https://github.com/ssem/scanning
+#git clone https://github.com/ssem/passwords
+#git clone https://github.com/ssem/honeypots
+#git clone https://github.com/ssem/fuzzing
+#git clone https://github.com/ssem/antivirus
+#git clone https://github.com/ssem/mygame
