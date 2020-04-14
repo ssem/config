@@ -53,3 +53,4 @@ inst tmux
 inst build-essential
 inst ipython
 inst python-beautifulsoup
+inst gradle
