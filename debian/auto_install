@@ -59,3 +59,4 @@ inst libssl-dev
 inst lsb-core
 inst ocl-icd-opencl-dev
 inst intel-opencl
+inst gparted
