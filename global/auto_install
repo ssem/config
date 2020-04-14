@@ -11,9 +11,13 @@ rm -r ~/Videos
 rm -r ~/Public
 #bashrc
 echo -e "\n[+] creating .bashrc"
+cat ~/.bashrc bashrc > bashrc.tmp
+mv bashrc.tmp ~/.bashrc
+
 #irssi
 echo -e "\n[+] creating .irssi"
 cp -r irssi ~/.irssi
+
 #vimrc
 echo -e "\n[+] creating .vimrc"
 rm ~/.vimrc
