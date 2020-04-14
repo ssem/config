@@ -8,21 +8,48 @@ inst()
 cd ~
 echo "[+] updating repo"
 sudo apt-get -qq -y update
-inst make
-inst python-bs4
-inst openssh-server
 inst vim
 sudo update-alternatives --config editor
 inst git
+inst bzip2
+inst gzip
+inst p7zip-full
+inst unrar
+inst unzip
+inst sqlite3
+inst firefox
+inst chromium-browser
+inst terminator
+inst qemu
+inst python-pip
+sudo pip install mitmproxy
+inst bless
+inst make
+inst cmake
+inst scons
+inst strace
+inst netcat
+inst nmap
+inst tcpdump
+inst wireshark
+inst minicom
+inst ftp
+inst curl
+inst telnet
+inst rsync
+inst whois
+inst wget
+inst openssh-server
+inst aircrack-ng
+inst autoconf
+inst automake
+inst binutils
+inst gcc
+inst cramfsswap
+inst htop
+inst iotop
+inst python-bs4
 inst tmux
 inst build-essential
 inst ipython
 inst python-beautifulsoup
-inst qemu
-inst sqlite3
-inst nmap
-inst unrar
-inst p7zip-full
-inst htop
-sudo pip -q install mitmproxy
-inst terminator
